@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<title>AI Unity</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"><br><br>
+    <h4><b>PORTFOLIO</b></h4>
+  </div>
+  <div class="w3-bar-block">
+    <a href="mkbhs_index.html#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
+    <a href="mkbhs_index.html#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+  </div>
+  <div class="w3-panel w3-large">
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="AI Unity">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>AI Unity</b></h1>
+    </div>
+  </header>
+
+
+  <div class="blurb">
+
+      <h5 id="intro">This project shows some of the environments created with Unity3D where the agent is trained to solve some problems. On the other side, there is a process that handles the agent's training by using PyTorch.</h5>
+
+      <h2>Avoid Guardians</h2>
+      <p id="avoid_guardians_description">The goal of the green agent is to reach the other side of the field while avoiding the two red guardians.</p>
+
+      <table id="table_avoid_guardians" class="table">
+        <thead>
+          <tr>
+            <th scope="col">State size</th>
+            <th scope="col">Action size</th>
+            <th scope="col">RL-Algorithm</th>
+            <th scope="col">Optimal behaviour(steps)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">6</th>
+            <td>4</td>
+            <td>DQN-PER</td>
+            <td>10k</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="w3-row-padding">
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_avoid_guardians_2k.gif" alt="agent trained at 2k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_avoid_guardians_6k.gif" alt="agent trained at 6k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_avoid_guardians_10k.gif" alt="agent trained at 10k steps"  width="450" />
+        </div>
+      </div>
+
+
+      <h2>Linear Defense</h2>
+      <p id="linear_defense_description">The goal of the green agent is to block the advance of the red enemies by shooting them before reaching the agent's line of defense.</p>
+
+      <table id="table_linear_defense" class="table">
+        <thead>
+          <tr>
+            <th scope="col">State size</th>
+            <th scope="col">Action size</th>
+            <th scope="col">RL-Algorithm</th>
+            <th scope="col">Best behaviour(steps)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">3</th>
+            <td>3</td>
+            <td>DDQN-PER</td>
+            <td>15k</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="w3-row-padding">
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_linear_defense_5k.gif" alt="agent trained at 5k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_linear_defense_10k.gif" alt="agent trained at 10k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_linear_defense_15k.gif" alt="agent trained at 15k steps"  width="450" />
+        </div>
+      </div>
+
+
+      <h2>Car Race (not finished, work in progress...)</h2>
+      <p id="car_race_description">The goal of the agent (car) is to complete a lap without crashing into the walls.</p>
+
+      <table id="table_car_race" class="table">
+        <thead>
+          <tr>
+            <th scope="col">State size</th>
+            <th scope="col">Action size</th>
+            <th scope="col">RL-Algorithm</th>
+            <th scope="col">Best behaviour(steps)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">3</th>
+            <td>4</td>
+            <td>DQN-PER</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="w3-row-padding">
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_car_race_sample_initial.gif" alt="agent trained at 5k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_car_race_sample_2.gif" alt="agent trained at 10k steps"  width="450" />
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <img src="https://raw.githubusercontent.com/mkbhs/ai_unity/main/media/mkbhs_car_race_sample_good.gif" alt="agent trained at 15k steps"  width="450" />
+        </div>
+      </div>
+
+  </div><!-- /.blurb -->
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+      </p>
+    </div>
+
+  </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+<style media="screen">
+  #table_avoid_guardians{
+    color: rgb(100, 100, 100);
+    margin: 1em 1em !important;
+    margin-right: 4em !important;
+  }
+
+  #table_linear_defense{
+    color: rgb(100, 100, 100);
+    margin: 1em 1em !important;
+    margin-right: 4em !important;
+  }
+
+  #table_car_race{
+		color: rgb(100, 100, 100);
+		margin: 1em 1em !important;
+		margin-right: 4em !important;
+	}
+
+</style>
